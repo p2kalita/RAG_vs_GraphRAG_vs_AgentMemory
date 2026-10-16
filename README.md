@@ -1,4 +1,4 @@
-## Not every LLM context problem is a RAG problem.
+# Not every LLM context problem is a RAG problem.
 
 There are three ways to give an LLM the right context, and they solve different problems 👇
 
