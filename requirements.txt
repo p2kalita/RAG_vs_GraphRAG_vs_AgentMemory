@@ -1,0 +1,15 @@
+langchain>=1.0
+langchain-core>=1.0
+langchain-text-splitters>=1.0
+langchain-google-genai>=4.0
+langchain-groq>=1.0
+langchain-neo4j>=0.10
+langchain-experimental>=0.4
+langgraph>=1.0
+graphiti-core[google-genai]>=0.20
+neo4j>=5.26
+python-dotenv>=1.0
+pandas>=2.2
+matplotlib>=3.9
+json-repair>=0.30
+ipykernel
