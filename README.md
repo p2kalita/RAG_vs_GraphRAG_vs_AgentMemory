@@ -40,3 +40,25 @@ Many production systems end up combining all three. Pick based on the question y
 Which one are you building with right now? 👇
 
 ![main_poster_image](main_image.gif)
+---
+
+## 📓 Run the notebook
+
+[`RAG_vs_GraphRAG_vs_AgentMemory.ipynb`](RAG_vs_GraphRAG_vs_AgentMemory.ipynb) builds all three on one storyline and compares them:
+
+| Section | What it shows |
+|---|---|
+| 2. RAG | LangChain + Gemini embeddings; wins on single-doc lookups, misses split facts |
+| 3. GraphRAG | `LLMGraphTransformer` → Neo4j, text-to-Cypher + hybrid graph retrieval; wins on multi-hop |
+| 4. Agent Memory | **Graphiti (Zep)** temporal knowledge graph; facts carry `valid_at`/`invalid_at`, old facts are invalidated rather than deleted, point-in-time queries |
+| 5. LangGraph agent | Combines all three; reads memory before each turn and writes it after |
+| 6. Comparison | LLM-as-judge scores by question type (lookup / multi-hop / personal / temporal) |
+
+```bash
+python -m venv .venv && .venv/Scripts/activate   # Windows (use bin/activate on macOS/Linux)
+pip install -r requirements.txt
+cp .env.example .env                              # add GOOGLE_API_KEY + Neo4j credentials
+jupyter lab RAG_vs_GraphRAG_vs_AgentMemory.ipynb
+```
+
+Requires a Gemini API key and a Neo4j database (AuraDB Free works). Groq is optional for faster answer generation.
