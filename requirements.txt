@@ -13,3 +13,4 @@ pandas>=2.2
 matplotlib>=3.9
 json-repair>=0.30
 ipykernel
+yfiles-jupyter-graphs
